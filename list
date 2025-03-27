@@ -45,3 +45,25 @@ void deleteNode(Node** head, int key) {
     prev->next = temp->next;
     free(temp);
     }
+
+void printList(Node* head) {
+    Node* temp = head;
+    while (temp != NULL) {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    Node* head = NULL;
+
+    insertNode(&head, 10);
+    insertNode(&head, 20);
+    insertNode(&head, 30);
+    printList(head);
+
+    deleteNode(&head, 20);
+    printList(head);
+
+    return 0;
